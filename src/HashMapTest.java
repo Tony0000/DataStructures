@@ -23,27 +23,27 @@ public class HashMapTest {
     @Test
     public void get() {
         assertEquals(map.get("Lars"), null);
-        assertEquals((int)map.get("Test3"), 3);
+        assertEquals(3, (int)map.get("Test3"));
     }
 
     @Test
     public void remove() {
         map.remove("Test2");
-        assertEquals(map.getSize(), 2);
+        assertEquals(2, map.getSize());
         map.remove("Lars");
-        assertEquals(map.getSize(), 2);
+        assertEquals(2, map.getSize());
     }
 
     @Test
     public void getKeySet() {
         Set<String> set = map.getKeySet();
-        assertEquals(set.size(), 3);
+        assertEquals(3, set.size());
     }
 
     @Test
     public void getSize() {
-        assertEquals(map.getSize(), 3);
+        assertEquals(3, map.getSize());
         map.add("Lars", 4);
-        assertEquals(map.getSize(), 4);
+        assertEquals(4, map.getSize());
     }
 }

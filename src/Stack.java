@@ -5,18 +5,15 @@ import java.util.Arrays;
  */
 public class Stack<E> {
 
-    private final int DEFAULT_CAPACITY = 10;
+    private int CAPACITY = 10;
     private int size = 0;
-    private Object elements[] = new Object[DEFAULT_CAPACITY];
+    private Object elements[] = new Object[CAPACITY];
 
     public void push(E e){
-        if(size != DEFAULT_CAPACITY){
-            elements[size++] = e;
+        if(size == CAPACITY){
+            CAPACITY = resizeStack();
         }
-        else{
-            resizeStack();
-            elements[size++] = e;
-        }
+        elements[size++] = e;
     }
 
     @SuppressWarnings("unchecked")
@@ -37,7 +34,9 @@ public class Stack<E> {
 
     }
 
-    private void resizeStack(){
-        elements = Arrays.copyOf(elements, size*2);
+    private int resizeStack(){
+        int newSize = size*2;
+        elements = Arrays.copyOf(elements, newSize);
+        return newSize;
     }
 }

@@ -30,7 +30,7 @@ public class StackTest {
         stack.push(1);
         stack.push(16);
         stack.push(15);
-        assertEquals((int)stack.peek(), 15);
+        assertEquals(15, (int)stack.peek());
     }
 
     @Test
@@ -40,12 +40,12 @@ public class StackTest {
         stack.pop();
         stack.pop();
         stack.pop();
-        assertEquals(stack.peek(), null);
+        assertEquals(null, (int)stack.peek());
         stack.pop();
     }
 
     @Test
     public void peek() throws Exception {
-        assertEquals((int)stack.peek(), 3);
+        assertEquals(3, (int)stack.peek());
     }
 }
